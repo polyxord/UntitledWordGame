@@ -1,6 +1,6 @@
 # Untitled Word Game
 
-This is a word game where you try to form words from adjacent letter tiles.
+This is a word game made in Godot 4.3 where you try to form words from adjacent letter tiles.
 The game is mostly based on Yahoo! Word Racer and Boggle.
 
 ## Things To Work On
