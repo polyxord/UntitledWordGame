@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbnsctkk4a4ij"]
+
+[ext_resource type="Script" path="res://gameplay/letter_tile.gd" id="1_grm3d"]
+[ext_resource type="Texture2D" uid="uid://bxsf3ttg7ffom" path="res://assets/image_masks/tile_mask_1.png" id="2_h26h4"]
+[ext_resource type="FontFile" uid="uid://bg1s83ohh62c5" path="res://assets/fonts/Open_Sans/static/OpenSans-Bold.ttf" id="2_lr2ep"]
+[ext_resource type="Texture2D" uid="uid://dglk5ni8xj2kl" path="res://assets/letter_tile_textures/default_tile_texture.tres" id="3_ajlfi"]
+
+[node name="LetterTile" type="Control"]
+clip_children = 2
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -41.0
+offset_top = -39.0
+offset_right = 39.0
+offset_bottom = 41.0
+pivot_offset = Vector2(40, 40)
+script = ExtResource("1_grm3d")
+
+[node name="Mask" type="TextureRect" parent="."]
+unique_name_in_owner = true
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h26h4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Mask"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ajlfi")
+
+[node name="Letter" type="Label" parent="Mask"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lr2ep")
+theme_override_font_sizes/font_size = 54
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1

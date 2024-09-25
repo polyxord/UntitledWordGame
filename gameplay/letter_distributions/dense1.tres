@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="LetterDistribution" load_steps=2 format=3 uid="uid://djvvueu4uidc3"]
+
+[ext_resource type="Script" path="res://gameplay/letter_distributions/letter_distribution.gd" id="1_3unxi"]
+
+[resource]
+script = ExtResource("1_3unxi")
+name = "dense1"
+letter_counts = {
+"A": 7,
+"B": 2,
+"C": 1,
+"D": 4,
+"E": 14,
+"F": 1,
+"G": 3,
+"H": 1,
+"I": 7,
+"J": 1,
+"K": 1,
+"L": 6,
+"M": 2,
+"N": 6,
+"O": 4,
+"P": 6,
+"QU": 1,
+"R": 10,
+"S": 15,
+"T": 8,
+"U": 2,
+"V": 0,
+"W": 1,
+"X": 0,
+"Y": 1,
+"Z": 0
+}

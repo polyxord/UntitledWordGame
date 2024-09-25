@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://buuhynnf15b5q"]
+
+[ext_resource type="Theme" uid="uid://s5btatppq0uk" path="res://assets/themes/main_theme.tres" id="1_5y7tc"]
+[ext_resource type="Script" path="res://menus/main_menu.gd" id="2_140mr"]
+[ext_resource type="PackedScene" uid="uid://c443sdmgmo48c" path="res://menus/scrolling_menu.tscn" id="3_6tuex"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5y7tc")
+script = ExtResource("2_140mr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Untitled" type="Node2D" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+rotation = -0.349066
+skew = 0.349066
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer/Control/Untitled"]
+offset_top = 221.0
+offset_right = 785.0
+offset_bottom = 494.0
+theme_override_font_sizes/normal_font_size = 200
+bbcode_enabled = true
+text = "[rainbow freq=1.0 sat=0.5 val=1.0]Untitled[/rainbow]"
+fit_content = true
+visible_characters_behavior = 1
+
+[node name="Word" type="Node2D" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+rotation = 0.349066
+skew = -0.349066
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer/Control/Word"]
+offset_left = 523.576
+offset_top = 41.9267
+offset_right = 926.576
+offset_bottom = 256.927
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[rainbow freq=1.0 sat=0.5 val=1.0]Word[/rainbow]"
+fit_content = true
+
+[node name="Game" type="Node2D" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+rotation = -0.349066
+skew = 0.349066
+
+[node name="Label" type="RichTextLabel" parent="HBoxContainer/Control/Game"]
+offset_left = 183.039
+offset_top = 555.603
+offset_right = 624.039
+offset_bottom = 760.603
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[rainbow freq=1.0 sat=0.5 val=1.0]Game[/rainbow]"
+fit_content = true
+
+[node name="ScrollingMenu" parent="HBoxContainer" instance=ExtResource("3_6tuex")]
+unique_name_in_owner = true
+layout_mode = 2

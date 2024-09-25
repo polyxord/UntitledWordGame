@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GridLayout" load_steps=2 format=3 uid="uid://cy378c1o3m1nl"]
+
+[ext_resource type="Script" path="res://gameplay/grid_layouts/grid_layout.gd" id="1_18o41"]
+
+[resource]
+script = ExtResource("1_18o41")
+name = "Fives"
+grid_size = Vector2i(5, 5)
+blank_coords = Array[Vector2i]([])
+multiplier_coords = Array[Vector2i]([])

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="LetterDistribution" load_steps=2 format=3 uid="uid://b5h3jijyjsbca"]
+
+[ext_resource type="Script" path="res://gameplay/letter_distributions/letter_distribution.gd" id="1_kiv56"]
+
+[resource]
+script = ExtResource("1_kiv56")
+name = "variety1"
+letter_counts = {
+"A": 8,
+"B": 2,
+"C": 2,
+"D": 4,
+"E": 11,
+"F": 2,
+"G": 3,
+"H": 3,
+"I": 9,
+"J": 1,
+"K": 2,
+"L": 4,
+"M": 3,
+"N": 7,
+"O": 7,
+"P": 2,
+"QU": 1,
+"R": 6,
+"S": 5,
+"T": 6,
+"U": 4,
+"V": 2,
+"W": 2,
+"X": 1,
+"Y": 2,
+"Z": 1
+}

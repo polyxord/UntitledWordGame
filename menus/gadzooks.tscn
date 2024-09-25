@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq3b1l5w5lxkr"]
+
+[ext_resource type="Script" path="res://menus/gadzooks.gd" id="1_q2ef0"]
+[ext_resource type="Texture2D" uid="uid://cu3fpijbhv1g7" path="res://assets/images/gadzooks.jpeg" id="1_yurgo"]
+[ext_resource type="AudioStream" uid="uid://hw0q4c5kqt6l" path="res://assets/music/gadzooks.wav" id="3_yc6jp"]
+
+[node name="Gadzooks" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q2ef0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yurgo")
+expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_yc6jp")
+autoplay = true

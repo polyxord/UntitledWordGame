@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GridLayout" load_steps=2 format=3 uid="uid://djaqmnf4f31w0"]
+
+[ext_resource type="Script" path="res://gameplay/grid_layouts/grid_layout.gd" id="1_s2wxi"]
+
+[resource]
+script = ExtResource("1_s2wxi")
+name = "Butterfly"
+grid_size = Vector2i(6, 6)
+blank_coords = Array[Vector2i]([Vector2i(5, 1), Vector2i(6, 1), Vector2i(5, 2), Vector2i(6, 2), Vector2i(1, 6), Vector2i(1, 5), Vector2i(2, 6), Vector2i(2, 5)])
+multiplier_coords = Array[Vector2i]([Vector2i(1, 1), Vector2i(6, 6)])

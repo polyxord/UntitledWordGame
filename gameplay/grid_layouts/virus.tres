@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GridLayout" load_steps=2 format=3 uid="uid://kekjhyhvyh4s"]
+
+[ext_resource type="Script" path="res://gameplay/grid_layouts/grid_layout.gd" id="1_rlymc"]
+
+[resource]
+script = ExtResource("1_rlymc")
+name = "Virus"
+grid_size = Vector2i(7, 7)
+blank_coords = Array[Vector2i]([Vector2i(1, 4), Vector2i(2, 4), Vector2i(4, 1), Vector2i(4, 2), Vector2i(4, 6), Vector2i(4, 7), Vector2i(6, 4), Vector2i(7, 4)])
+multiplier_coords = Array[Vector2i]([Vector2i(2, 2), Vector2i(6, 6), Vector2i(6, 2), Vector2i(2, 6)])

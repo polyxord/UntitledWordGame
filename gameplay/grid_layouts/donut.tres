@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GridLayout" load_steps=2 format=3 uid="uid://bg7vuvnttium"]
+
+[ext_resource type="Script" path="res://gameplay/grid_layouts/grid_layout.gd" id="1_ydih3"]
+
+[resource]
+script = ExtResource("1_ydih3")
+name = "Donut"
+grid_size = Vector2i(6, 6)
+blank_coords = Array[Vector2i]([Vector2i(3, 3), Vector2i(3, 4), Vector2i(4, 4), Vector2i(4, 3)])
+multiplier_coords = Array[Vector2i]([Vector2i(1, 1), Vector2i(1, 6), Vector2i(6, 6), Vector2i(6, 1)])

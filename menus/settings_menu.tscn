@@ -1,0 +1,313 @@
+[gd_scene load_steps=3 format=3 uid="uid://drhc524h33mbd"]
+
+[ext_resource type="Theme" uid="uid://s5btatppq0uk" path="res://assets/themes/main_theme.tres" id="1_pvone"]
+[ext_resource type="Script" path="res://menus/settings_menu.gd" id="2_38c4r"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pvone")
+script = ExtResource("2_38c4r")
+wordlist_paths = Array[String](["res://assets/wordlists/letterpress.txt", "res://assets/wordlists/wordnik.txt", "res://assets/wordlists/enable.txt"])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 20.0
+offset_right = 1102.0
+offset_bottom = 628.0
+follow_focus = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Fullscreen" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Fullscreen"
+
+[node name="FullscreenOptionButton" type="OptionButton" parent="ScrollContainer/MarginContainer/VBoxContainer/Fullscreen"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_top = NodePath("../../Wordlist/WordlistOptionButton")
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Off"
+popup/item_0/id = 1
+popup/item_1/text = "On"
+popup/item_1/id = 1
+
+[node name="Borderless" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Borderless"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Borderless"
+
+[node name="BorderlessOptionButton" type="OptionButton" parent="ScrollContainer/MarginContainer/VBoxContainer/Borderless"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Off"
+popup/item_1/text = "On"
+popup/item_1/id = 1
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 31)
+layout_mode = 2
+
+[node name="MasterVolume" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 63)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/MasterVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/MasterVolume/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+text = "Master Volume"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/MasterVolume/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 16
+
+[node name="MasterVolumeLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/MasterVolume/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "50%"
+vertical_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="ScrollContainer/MarginContainer/VBoxContainer/MasterVolume"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicVolume" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 63)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/MusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/MusicVolume/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Music Volume"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/MusicVolume/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 16
+
+[node name="MusicVolumeLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/MusicVolume/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "50%"
+vertical_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="ScrollContainer/MarginContainer/VBoxContainer/MusicVolume"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXVolume" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 63)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SFXVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SFXVolume/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "SFX Volume"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/SFXVolume/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 16
+
+[node name="SFXVolumeLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SFXVolume/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "50%"
+vertical_alignment = 1
+
+[node name="SFXVolumeSlider" type="HSlider" parent="ScrollContainer/MarginContainer/VBoxContainer/SFXVolume"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 31)
+layout_mode = 2
+
+[node name="LetterTileSeparation" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/LetterTileSeparation"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/LetterTileSeparation/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Letter Tile Separation"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/LetterTileSeparation/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 16
+
+[node name="TileSeparationLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/LetterTileSeparation/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "50"
+vertical_alignment = 1
+
+[node name="TileSeparationSlider" type="HSlider" parent="ScrollContainer/MarginContainer/VBoxContainer/LetterTileSeparation"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 40.0
+rounded = true
+
+[node name="ConnectorThickness" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ConnectorThickness"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ConnectorThickness/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Connector Thickness"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ConnectorThickness/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 16
+
+[node name="ConnectorThicknessLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ConnectorThickness/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "50"
+vertical_alignment = 1
+
+[node name="ConnectorThicknessSlider" type="HSlider" parent="ScrollContainer/MarginContainer/VBoxContainer/ConnectorThickness"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 30.0
+value = 8.0
+
+[node name="DistinctMultiplierTiles" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/DistinctMultiplierTiles"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Distinct Multiplier Tiles"
+
+[node name="DistinctTilesOptionButton" type="OptionButton" parent="ScrollContainer/MarginContainer/VBoxContainer/DistinctMultiplierTiles"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Off"
+popup/item_0/id = 1
+popup/item_1/text = "On"
+popup/item_1/id = 1
+
+[node name="Wordlist" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/Wordlist"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Wordlist"
+
+[node name="WordlistOptionButton" type="OptionButton" parent="ScrollContainer/MarginContainer/VBoxContainer/Wordlist"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_bottom = NodePath("../../Fullscreen/FullscreenOptionButton")
+alignment = 1

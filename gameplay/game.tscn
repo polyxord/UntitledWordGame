@@ -1,0 +1,278 @@
+[gd_scene load_steps=9 format=3 uid="uid://b638n5btmswaj"]
+
+[ext_resource type="Script" path="res://gameplay/game.gd" id="1_1yb4u"]
+[ext_resource type="Script" path="res://gameplay/rounds/round.gd" id="2_4800v"]
+[ext_resource type="Resource" uid="uid://dyapvxjxlnrov" path="res://gameplay/grid_layouts/classic.tres" id="3_oywb6"]
+[ext_resource type="Resource" uid="uid://b5h3jijyjsbca" path="res://gameplay/letter_distributions/variety1.tres" id="4_mme56"]
+[ext_resource type="Script" path="res://gameplay/rounds/sprint_round.gd" id="5_b586x"]
+[ext_resource type="AudioStream" uid="uid://by74dc2g0snfx" path="res://assets/sfx/valid_word.wav" id="6_ke5cd"]
+
+[sub_resource type="Theme" id="Theme_xuj5q"]
+default_font_size = 20
+
+[sub_resource type="Resource" id="Resource_3o8dk"]
+script = ExtResource("5_b586x")
+sprint_time = 10
+grid_layout = ExtResource("3_oywb6")
+letter_distribution = ExtResource("4_mme56")
+min_word_length = 2
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_xuj5q")
+script = ExtResource("1_1yb4u")
+rounds = Array[ExtResource("2_4800v")]([SubResource("Resource_3o8dk")])
+_background_file_paths = Array[String](["res://assets/bg_images/100070absdl.jpg", "res://assets/bg_images/101414absdl.jpg", "res://assets/bg_images/106639absdl.jpg", "res://assets/bg_images/911511absdl.jpg", "res://assets/bg_images/911954absdl.jpg", "res://assets/bg_images/animal-1239127_1280.jpg"])
+_valid_word_sfx = ExtResource("6_ke5cd")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.54902, 0.54902, 0.54902, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoBar" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/InfoBar"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RoundInfoLabel" type="Label" parent="VBoxContainer/InfoBar/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Round Info"
+horizontal_alignment = 1
+
+[node name="RoundInfoLabel2" type="Label" parent="VBoxContainer/InfoBar/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "More Round Info"
+horizontal_alignment = 1
+
+[node name="SeedLabel" type="RichTextLabel" parent="VBoxContainer/InfoBar/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[center]Seed[/center]"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.77
+
+[node name="TimedRoundInfo" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/TimedRoundInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Time Left"
+horizontal_alignment = 1
+
+[node name="TimeLeftLabel" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/TimedRoundInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "191"
+horizontal_alignment = 1
+
+[node name="ArcheoRoundInfo" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ArcheoRoundInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Words Needed"
+horizontal_alignment = 1
+
+[node name="NumWordsNeededLabel" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ArcheoRoundInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "80"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TotalScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Total score: 0"
+horizontal_alignment = 1
+
+[node name="RoundScoreLabel" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Round score: 0"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MissedWordsLabel" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Words Missed"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MissedWordList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Control" type="Control" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LineGrid" type="Control" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(220, 220)
+
+[node name="LetterGrid" type="GridContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(220, 220)
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.77
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Discovered Words"
+horizontal_alignment = 1
+
+[node name="DiscoveredWordCount" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="DiscoveredWordCountLabel" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/DiscoveredWordCount"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 36
+text = "42"
+vertical_alignment = 1
+
+[node name="Slash" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/DiscoveredWordCount"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "/"
+
+[node name="TotalWordCountLabel" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/DiscoveredWordCount"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 36
+text = "727"
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="GuessedWordsScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GuessedWordList" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/GuessedWordsScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 42
+context_menu_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+theme_override_font_sizes/font_size = 42
+disabled = true
+text = "Continue"

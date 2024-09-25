@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://c443sdmgmo48c"]
+
+[ext_resource type="Script" path="res://menus/scrolling_menu.gd" id="1_s68o8"]
+
+[node name="ScrollingMenu" type="ScrollContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("1_s68o8")
+
+[node name="ScrollTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="SoloButton" type="Button" parent="MarginContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_previous = NodePath("../QuitButton")
+text = "Solo"
+
+[node name="MultiButton" type="Button" parent="MarginContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Multi"
+
+[node name="SettingsButton" type="Button" parent="MarginContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../SoloButton")
+focus_next = NodePath("../SoloButton")
+text = "Quit"

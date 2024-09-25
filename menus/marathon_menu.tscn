@@ -1,0 +1,108 @@
+[gd_scene load_steps=20 format=3 uid="uid://beognjl5bf6ba"]
+
+[ext_resource type="Theme" uid="uid://s5btatppq0uk" path="res://assets/themes/main_theme.tres" id="1_vjj6l"]
+[ext_resource type="Script" path="res://menus/marathon_menu.gd" id="2_cbja2"]
+[ext_resource type="PackedScene" uid="uid://c443sdmgmo48c" path="res://menus/scrolling_menu.tscn" id="3_31sv4"]
+[ext_resource type="Script" path="res://gameplay/grid_layouts/grid_layout.gd" id="3_o5123"]
+[ext_resource type="Resource" uid="uid://dyapvxjxlnrov" path="res://gameplay/grid_layouts/classic.tres" id="4_118gj"]
+[ext_resource type="Resource" uid="uid://cqly2h2iyxvyl" path="res://gameplay/grid_layouts/diamond.tres" id="5_lj8r1"]
+[ext_resource type="Resource" uid="uid://djaqmnf4f31w0" path="res://gameplay/grid_layouts/butterfly.tres" id="6_6d4qi"]
+[ext_resource type="Resource" uid="uid://bg7vuvnttium" path="res://gameplay/grid_layouts/donut.tres" id="7_hx0yp"]
+[ext_resource type="Resource" uid="uid://dmf5ksna47syw" path="res://gameplay/grid_layouts/window.tres" id="8_sxrvo"]
+[ext_resource type="Resource" uid="uid://b7mar5bbppe5" path="res://gameplay/grid_layouts/n.tres" id="9_l7xxc"]
+[ext_resource type="Resource" uid="uid://8xbrafcx63gc" path="res://gameplay/grid_layouts/eyes.tres" id="10_sog5y"]
+[ext_resource type="Resource" uid="uid://cy378c1o3m1nl" path="res://gameplay/grid_layouts/fives.tres" id="11_4tl6n"]
+[ext_resource type="Resource" uid="uid://dp1ck4fetat26" path="res://gameplay/grid_layouts/catdog.tres" id="12_xcysj"]
+[ext_resource type="Resource" uid="uid://bted36ijeuyxr" path="res://gameplay/grid_layouts/braces.tres" id="13_vsco3"]
+[ext_resource type="Resource" uid="uid://dfrn37sr2hng4" path="res://gameplay/grid_layouts/mansion.tres" id="14_q2qlt"]
+[ext_resource type="Resource" uid="uid://bclkf4l28bryt" path="res://gameplay/grid_layouts/sixes.tres" id="15_ilepi"]
+[ext_resource type="Resource" uid="uid://hpb3sr4hujm5" path="res://gameplay/grid_layouts/async.tres" id="16_ekjhs"]
+[ext_resource type="Resource" uid="uid://cio817np420tg" path="res://gameplay/grid_layouts/crossed.tres" id="17_noybn"]
+[ext_resource type="Resource" uid="uid://kekjhyhvyh4s" path="res://gameplay/grid_layouts/virus.tres" id="18_o651q"]
+
+[node name="MarathonMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vjj6l")
+script = ExtResource("2_cbja2")
+wurd_marathon_grid_layouts = Array[ExtResource("3_o5123")]([ExtResource("4_118gj"), ExtResource("5_lj8r1"), ExtResource("6_6d4qi"), ExtResource("7_hx0yp")])
+archaeo_60_marathon_layouts = Array[ExtResource("3_o5123")]([ExtResource("4_118gj"), ExtResource("5_lj8r1"), ExtResource("6_6d4qi"), ExtResource("7_hx0yp")])
+archaeo_65_marathon_layouts = Array[ExtResource("3_o5123")]([ExtResource("4_118gj"), ExtResource("8_sxrvo"), ExtResource("9_l7xxc"), ExtResource("10_sog5y")])
+archaeo_70_marathon_layouts = Array[ExtResource("3_o5123")]([ExtResource("5_lj8r1"), ExtResource("17_noybn"), ExtResource("16_ekjhs"), ExtResource("12_xcysj")])
+archaeo_75_marathon_layouts = Array[ExtResource("3_o5123")]([ExtResource("11_4tl6n"), ExtResource("12_xcysj"), ExtResource("13_vsco3"), ExtResource("10_sog5y")])
+archaeo_78_marathon_layouts = Array[ExtResource("3_o5123")]([ExtResource("11_4tl6n"), ExtResource("6_6d4qi"), ExtResource("9_l7xxc"), ExtResource("14_q2qlt"), ExtResource("13_vsco3")])
+archaeo_81_marathon_layouts = Array[ExtResource("3_o5123")]([ExtResource("15_ilepi"), ExtResource("16_ekjhs"), ExtResource("17_noybn"), ExtResource("18_o651q"), ExtResource("14_q2qlt")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Marathon1" type="Node2D" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+position = Vector2(446, 322)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control/Marathon1"]
+offset_left = -446.0
+offset_top = -120.0
+offset_right = 411.0
+offset_bottom = 140.0
+theme_override_font_sizes/normal_font_size = 178
+bbcode_enabled = true
+text = "[rainbow freq=1.0 sat=0.5 val=1.0]Marathon[/rainbow]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Marathon2" type="Node2D" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+position = Vector2(446, 322)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control/Marathon2"]
+offset_left = -446.0
+offset_top = 66.0
+offset_right = 411.0
+offset_bottom = 326.0
+theme_override_font_sizes/normal_font_size = 178
+bbcode_enabled = true
+text = "[rainbow freq=1.0 sat=0.5 val=1.0]Marathon[/rainbow]"
+fit_content = true
+
+[node name="Marathon3" type="Node2D" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+position = Vector2(446, 322)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/Control/Marathon3"]
+offset_left = -446.0
+offset_top = -322.0
+offset_right = 411.0
+offset_bottom = -62.0
+theme_override_font_sizes/normal_font_size = 178
+bbcode_enabled = true
+text = "[rainbow freq=1.0 sat=0.5 val=1.0]Marathon[/rainbow]"
+fit_content = true
+
+[node name="ScrollingMenu" parent="HBoxContainer" instance=ExtResource("3_31sv4")]
+unique_name_in_owner = true
+layout_mode = 2

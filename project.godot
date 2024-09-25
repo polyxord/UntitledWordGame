@@ -1,0 +1,37 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="UntitledWordGame"
+config/description="Word game based on Yahoo! Word Racer and Boggle"
+run/main_scene="res://menus/main_menu.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://assets/icon/icon.svg"
+
+[autoload]
+
+ConfigHandler="*res://singletons/config_handler.gd"
+SceneHandler="*res://singletons/scene_handler.tscn"
+WordlistHandler="*res://singletons/wordlist_handler.gd"
+SoundHandler="*res://singletons/sound_handler.tscn"
+
+[display]
+
+window/size/always_on_top=true
+window/stretch/mode="canvas_items"
+
+[filesystem]
+
+import/blender/enabled=false
+
+[rendering]
+
+renderer/rendering_method="mobile"

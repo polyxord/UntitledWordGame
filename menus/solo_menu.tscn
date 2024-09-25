@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://ls6gsiq7rrnq"]
+
+[ext_resource type="Theme" uid="uid://s5btatppq0uk" path="res://assets/themes/main_theme.tres" id="1_syfxr"]
+[ext_resource type="Script" path="res://menus/solo_menu.gd" id="2_eit4c"]
+[ext_resource type="PackedScene" uid="uid://c443sdmgmo48c" path="res://menus/scrolling_menu.tscn" id="3_tqe8r"]
+
+[node name="SoloMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_syfxr")
+script = ExtResource("2_eit4c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 7
+
+[node name="ScrollingMenu" parent="HBoxContainer" instance=ExtResource("3_tqe8r")]
+unique_name_in_owner = true
+layout_mode = 2

@@ -1,0 +1,219 @@
+[gd_scene load_steps=23 format=3 uid="uid://dxs6cq11am2i0"]
+
+[ext_resource type="Theme" uid="uid://s5btatppq0uk" path="res://assets/themes/main_theme.tres" id="1_8m5wk"]
+[ext_resource type="Script" path="res://menus/freeplay_menu.gd" id="2_hro1f"]
+[ext_resource type="Script" path="res://gameplay/letter_distributions/letter_distribution.gd" id="3_4wv6o"]
+[ext_resource type="Resource" uid="uid://b5h3jijyjsbca" path="res://gameplay/letter_distributions/variety1.tres" id="4_ln4g4"]
+[ext_resource type="Resource" uid="uid://djvvueu4uidc3" path="res://gameplay/letter_distributions/dense1.tres" id="5_r7suo"]
+[ext_resource type="Script" path="res://gameplay/grid_layouts/grid_layout.gd" id="5_ujp7u"]
+[ext_resource type="Resource" uid="uid://dyapvxjxlnrov" path="res://gameplay/grid_layouts/classic.tres" id="6_ysfbu"]
+[ext_resource type="Resource" uid="uid://cy378c1o3m1nl" path="res://gameplay/grid_layouts/fives.tres" id="7_bcmdj"]
+[ext_resource type="Resource" uid="uid://bclkf4l28bryt" path="res://gameplay/grid_layouts/sixes.tres" id="8_f4q8s"]
+[ext_resource type="Resource" uid="uid://cqly2h2iyxvyl" path="res://gameplay/grid_layouts/diamond.tres" id="9_jxjns"]
+[ext_resource type="Resource" uid="uid://djaqmnf4f31w0" path="res://gameplay/grid_layouts/butterfly.tres" id="10_xqrt6"]
+[ext_resource type="Resource" uid="uid://bg7vuvnttium" path="res://gameplay/grid_layouts/donut.tres" id="11_xcijl"]
+[ext_resource type="Resource" uid="uid://dmf5ksna47syw" path="res://gameplay/grid_layouts/window.tres" id="12_o6jum"]
+[ext_resource type="Resource" uid="uid://bted36ijeuyxr" path="res://gameplay/grid_layouts/braces.tres" id="13_s4aqm"]
+[ext_resource type="Resource" uid="uid://cio817np420tg" path="res://gameplay/grid_layouts/crossed.tres" id="14_egskt"]
+[ext_resource type="Resource" uid="uid://kekjhyhvyh4s" path="res://gameplay/grid_layouts/virus.tres" id="15_6fqvs"]
+[ext_resource type="Resource" uid="uid://hpb3sr4hujm5" path="res://gameplay/grid_layouts/async.tres" id="16_jbflw"]
+[ext_resource type="Resource" uid="uid://dp1ck4fetat26" path="res://gameplay/grid_layouts/catdog.tres" id="17_j6owc"]
+[ext_resource type="Resource" uid="uid://cev26kkapbr2d" path="res://gameplay/grid_layouts/arrow.tres" id="18_bmlia"]
+[ext_resource type="Resource" uid="uid://8xbrafcx63gc" path="res://gameplay/grid_layouts/eyes.tres" id="19_kbvc3"]
+[ext_resource type="Resource" uid="uid://b7mar5bbppe5" path="res://gameplay/grid_layouts/n.tres" id="20_vgieu"]
+[ext_resource type="Resource" uid="uid://dfrn37sr2hng4" path="res://gameplay/grid_layouts/mansion.tres" id="21_202kf"]
+
+[node name="FreeplayMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8m5wk")
+script = ExtResource("2_hro1f")
+letter_distributions = Array[ExtResource("3_4wv6o")]([ExtResource("4_ln4g4"), ExtResource("5_r7suo")])
+game_modes = Array[String](["Sprint", "Archaeologist"])
+grid_layouts = Array[ExtResource("5_ujp7u")]([ExtResource("6_ysfbu"), ExtResource("7_bcmdj"), ExtResource("8_f4q8s"), ExtResource("9_jxjns"), ExtResource("10_xqrt6"), ExtResource("11_xcijl"), ExtResource("12_o6jum"), ExtResource("13_s4aqm"), ExtResource("14_egskt"), ExtResource("15_6fqvs"), ExtResource("16_jbflw"), ExtResource("17_j6owc"), ExtResource("18_bmlia"), ExtResource("19_kbvc3"), ExtResource("20_vgieu"), ExtResource("21_202kf")])
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MinWordLength" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MinWordLength"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Minimum Word Length"
+
+[node name="MinWordLengthSpinBox" type="SpinBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MinWordLength"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 2.0
+max_value = 6.0
+value = 2.0
+alignment = 1
+
+[node name="LetterDistribution" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/LetterDistribution"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Letter Distribution"
+
+[node name="LetterDistributionOptionButton" type="OptionButton" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/LetterDistribution"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 31)
+layout_mode = 2
+
+[node name="GameMode" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/GameMode"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Game Mode"
+
+[node name="GameModeOptionButton" type="OptionButton" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/GameMode"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="SprintTime" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SprintTime"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Sprint Time"
+
+[node name="SprintTimeSpinBox" type="SpinBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SprintTime"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 60.0
+max_value = 600.0
+value = 120.0
+alignment = 1
+suffix = "seconds"
+
+[node name="PercentToFind" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PercentToFind"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "% of Words to Find"
+
+[node name="PercentToFindSpinBox" type="SpinBox" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PercentToFind"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 20.0
+step = 0.1
+value = 50.0
+alignment = 1
+suffix = "%"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 31)
+layout_mode = 2
+
+[node name="GridLayout" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/GridLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+text = "Grid Layout"
+
+[node name="GridLayoutOptionButton" type="OptionButton" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/GridLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="GridSeed" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/GridSeed"]
+layout_mode = 2
+size_flags_stretch_ratio = 1.5
+text = "Grid Seed "
+
+[node name="Label2" type="Label" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/GridSeed"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "(blank = random)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridSeedLineEdit" type="LineEdit" parent="VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/GridSeed"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="StartButton" type="Button" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "Start"

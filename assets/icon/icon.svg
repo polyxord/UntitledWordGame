@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" stroke="none" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="path_1" d="M128 0L128 0L128 128L0 128L0 0L128 0Z" />
+    <rect id="rect_2" x="0" y="0" width="128" height="128" />
+    <clipPath id="clip_path_3">
+      <use xlink:href="#rect_2" />
+    </clipPath>
+    <linearGradient id="gradient_4" gradientUnits="userSpaceOnUse" x1="64" y1="0" x2="64" y2="128">
+      <stop offset="0" stop-color="#FFFFFF" />
+      <stop offset="0.537" stop-color="#939B4D" />
+      <stop offset="1" stop-color="#FFFFFF" />
+    </linearGradient>
+  </defs>
+  <g id="Icon 128" opacity="1" clip-path="url(#clip_path_3)">
+    <g>
+      <use xlink:href="#path_1" style="mix-blend-mode:normal;" />
+      <g>
+        <path id="Oval" d="M0 64C0 28.6538 28.6538 0 64 0C99.3462 0 128 28.6538 128 64C128 99.3462 99.3462 128 64 128C28.6538 128 0 99.3462 0 64Z" style="fill:url(#gradient_4);fill-rule:evenodd;mix-blend-mode:normal;" />
+        <g clip-path="url(#clip_path_3)" style="mix-blend-mode:normal;" transform="translate(0 5.442)">
+          <path d="M83.1445 30.5283L67.5234 91.9209L52.7002 91.9209L44.3857 59.6709Q44.1338 58.7471 43.7139 56.8574Q43.2939 54.9678 42.832 52.7212Q42.3701 50.4746 42.0132 48.48Q41.6562 46.4854 41.5303 45.3096Q41.4043 46.4854 41.0474 48.459Q40.6904 50.4326 40.2495 52.6582Q39.8086 54.8838 39.3887 56.8154Q38.9688 58.7471 38.7168 59.7549L30.4443 91.9209L15.6631 91.9209L0 30.5283L12.8076 30.5283L20.6602 64.0381Q20.9961 65.5498 21.437 67.6494Q21.8779 69.749 22.3188 72.0376Q22.7598 74.3262 23.1167 76.4468Q23.4736 78.5674 23.6416 80.1211Q23.8516 78.5254 24.1875 76.4048Q24.5234 74.2842 24.9224 72.0796Q25.3213 69.875 25.7412 67.9854Q26.1611 66.0957 26.4971 64.9199L35.4414 30.5283L47.7451 30.5283L56.6895 64.9199Q56.9834 66.0537 57.3823 67.9644Q57.7812 69.875 58.2012 72.1006Q58.6211 74.3262 58.978 76.4468Q59.335 78.5674 59.5029 80.1211Q59.7969 78.0215 60.3218 75.019Q60.8467 72.0166 61.4556 69.0352Q62.0645 66.0537 62.5264 64.0381L70.3369 30.5283L83.1445 30.5283Z" transform="translate(22.428 0)" style="fill:#000000;" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

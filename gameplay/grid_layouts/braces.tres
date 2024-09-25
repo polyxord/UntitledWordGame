@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GridLayout" load_steps=2 format=3 uid="uid://bted36ijeuyxr"]
+
+[ext_resource type="Script" path="res://gameplay/grid_layouts/grid_layout.gd" id="1_u1slb"]
+
+[resource]
+script = ExtResource("1_u1slb")
+name = "Braces"
+grid_size = Vector2i(7, 7)
+blank_coords = Array[Vector2i]([Vector2i(2, 2), Vector2i(2, 4), Vector2i(2, 6), Vector2i(6, 2), Vector2i(6, 4), Vector2i(6, 6), Vector2i(3, 1), Vector2i(3, 3), Vector2i(3, 5), Vector2i(3, 7), Vector2i(5, 1), Vector2i(5, 3), Vector2i(5, 5), Vector2i(5, 7)])
+multiplier_coords = Array[Vector2i]([Vector2i(2, 1), Vector2i(6, 1), Vector2i(2, 7), Vector2i(6, 7)])
