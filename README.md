@@ -15,6 +15,8 @@ The game is mostly based on Yahoo! Word Racer and Boggle.
 
 For licensing info, refer to the LICENSE file.
 
+The Godot Engine itself is [licensed under the MIT license](godotengine.org/license).
+
 letterpress.txt is from
 [Loren Brichter's Words repository](https://github.com/lorenbrichter/Words)
 which is available under the CC0-1.0 license.
